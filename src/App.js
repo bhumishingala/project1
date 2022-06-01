@@ -205,28 +205,42 @@ function App() {
     },
   ]
 
+  let fdata = data.filter((d) => d.status === true && d.expiry >= 2022)
+  console.log(fdata);
+
+  let ans=fdata.reduce((acc,d,i) => acc + d.price,0)
+  console.log(ans);
+
+  let efdata = Employee.filter((e) => e.status === true);
+  console.log(efdata);
+
+  let emloyeeans = efdata.reduce((acc,e,i) => acc + e.salary + e.bonus,0)
+  console.log(emloyeeans);
+
   return (
     <div>
       <table border="1">
         <tr>
-          <td>Id</td>
-          <td>Name</td>
-          <td>Quantity</td>
-          <td>Price</td>
-          <td>Expiry</td>
-          <td>Status</td>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Expiry</th>
+          <th>Status</th>
+          <th>Totle Price</th>
         </tr>
           {
-            data.map((d)=> {
+            fdata.map((d,i)=> {
               let {id,name,quantity,price,expiry,status} = d
               return(
-                <tr>
-                <th>{id}</th>
-                <th>{name}</th>
-                <th>{quantity}</th>
-                <th>{price}</th>
-                <th>{expiry}</th>
-                <th>{status.toString()}</th>
+                <tr key={i}>
+                <td>{id}</td>
+                <td>{name}</td>
+                <td>{quantity}</td>
+                <td>{price}</td>
+                <td>{expiry}</td>
+                <td>{status.toString()}</td>
+                {i == 0 ? <td rowSpan="2">{ans}</td> : null}
               </tr>
               )
             })
@@ -234,22 +248,24 @@ function App() {
       </table>
       <table border="1">
         <tr>
-          <td>Name</td>
-          <td>Age</td>
-          <td>Salary</td>
-          <td>Bouns</td>
-          <td>Status</td>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Salary</th>
+          <th>Bouns</th>
+          <th>Status</th>
+          <th>Totle Salary</th>
         </tr>
         {
-          Employee.map((e) => {
+          efdata.map((e,i) => {
             let {name,age,salary,bonus,status} = e;
             return (
-              <tr>
-                <th>{name}</th>
-                <th>{age}</th>
-                <th>{salary}</th>
-                <th>{bonus}</th>
-                <th>{status.toString()}</th>
+              <tr key={i}>
+                <td >{name}</td>
+                <td>{age}</td>
+                <td>{salary}</td>
+                <td>{bonus}</td>
+                <td>{status.toString()}</td>
+                <td>{emloyeeans}</td>
               </tr>
             )
           })
