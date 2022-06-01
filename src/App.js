@@ -123,50 +123,49 @@ function App() {
   //   }
   // }
 
-  // let Data = [
-  //   {
-  //     id: 101,
-  //     name: 'Abacavir',
-  //     quantity: 25,
-  //     price: 150,
-  //     expiry: 2022,
-  //     status: true
-  //   },
-  //   {
-  //     id: 102,
-  //     name: 'Eltrombopag',
-  //     quantity: 90,
-  //     price: 550,
-  //     expiry: 2021,
-  //     status: true
-  //   },
-  //   {
-  //     id: 103,
-  //     name: 'Meloxicam',
-  //     quantity: 85,
-  //     price: 450,
-  //     expiry: 2025,
-  //     status: false
-  //   },
-  //   {
-  //     id: 104,
-  //     name: 'Allopurinol',
-  //     quantity: 50,
-  //     price: 600,
-  //     expiry: 2023,
-  //     status: true
-  //   },
-  //   {
-  //     id: 105,
-  //     name: 'Phenytoin',
-  //     quantity: 63,
-  //     price: 250,
-  //     expiry: 2021,
-  //     status: false
-  //   }
-  // ];
+  let data = [
+    {
+      id: 101,
+      name: 'Abacavir',
+      quantity: 25,
+      price: 150,
+      expiry: 2022,
+      status: true
+    },
+    {
+      id: 102,
+      name: 'Eltrombopag',
+      quantity: 90,
+      price: 550,
+      expiry: 2021,
+      status: true
+    },
+    {
+      id: 103,
+      name: 'Meloxicam',
+      quantity: 85,
+      price: 450,
+      expiry: 2025,
+      status: false
+    },
+    {
+      id: 104,
+      name: 'Allopurinol',
+      quantity: 50,
+      price: 600,
+      expiry: 2023,
+      status: true
+    },
+    {
+      id: 105,
+      name: 'Phenytoin',
+      quantity: 63,
+      price: 250,
+      expiry: 2021,
+      status: false
+    }
+  ];
 
-  // let [id,name,quantity,price,expiry,status] = Data;
 
   let Employee = [
     {
@@ -208,7 +207,7 @@ function App() {
 
   return (
     <div>
-      {/* <table border="1">
+      <table border="1">
         <tr>
           <td>Id</td>
           <td>Name</td>
@@ -218,20 +217,21 @@ function App() {
           <td>Status</td>
         </tr>
           {
-            Data.map((d)=> {
+            data.map((d)=> {
+              let {id,name,quantity,price,expiry,status} = d
               return(
                 <tr>
-                <th>{d.id}</th>
-                <th>{d.name}</th>
-                <th>{d.quantity}</th>
-                <th>{d.price}</th>
-                <th>{d.expiry}</th>
-                <th>{d.status.toString()}</th>
+                <th>{id}</th>
+                <th>{name}</th>
+                <th>{quantity}</th>
+                <th>{price}</th>
+                <th>{expiry}</th>
+                <th>{status.toString()}</th>
               </tr>
               )
             })
           }
-      </table> */}
+      </table>
       <table border="1">
         <tr>
           <td>Name</td>
@@ -242,13 +242,14 @@ function App() {
         </tr>
         {
           Employee.map((e) => {
+            let {name,age,salary,bonus,status} = e;
             return (
               <tr>
-                <th>{e.name}</th>
-                <th>{e.age}</th>
-                <th>{e.salary}</th>
-                <th>{e.bonus}</th>
-                <th>{e.status.toString()}</th>
+                <th>{name}</th>
+                <th>{age}</th>
+                <th>{salary}</th>
+                <th>{bonus}</th>
+                <th>{status.toString()}</th>
               </tr>
             )
           })
