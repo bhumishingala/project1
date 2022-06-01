@@ -84,48 +84,176 @@ function App() {
   // }
 
 
-  const data = {
-    personal_info: {
-      name: 'amit',
-      age: 25,
-      city: 'surat'
-    },
-    courses: ["C", "JavaScript", "React"],
-    branches: {
-      rwl: {
-        admission: 50,
-        vacant_seat: 10
-      },
-      rw2: {
-        admission: 30,
-        vacant_seat: 20
-      },
-      rw3: {
-        admission: 25,
-        vacant_seat: 25
-      },
-      rw4: {
-        admission: 40,
-        vacant_seat: 10
-      }
-    }
-  }
+  // const data = {
+  //   personal_info: {
+  //     name: 'amit',
+  //     age: 25,
+  //     city: 'surat'
+  //   },
+  //   courses: ["C", "JavaScript", "React"],
+  //   branches: {
+  //     rwl: {
+  //       admission: 50,
+  //       vacant_seat: 10
+  //     },
+  //     rw2: {
+  //       admission: 30,
+  //       vacant_seat: 20
+  //     },
+  //     rw3: {
+  //       admission: 25,
+  //       vacant_seat: 25
+  //     },
+  //     rw4: {
+  //       admission: 40,
+  //       vacant_seat: 10
+  //     }
+  //   }
+  // }
 
-  for(let d in data){
-    if(d === "personal_info"){
-      console.log(data[d].name,data[d].age);
-    }else if(d === "courses"){
-      data[d].map((d1) => console.log(d1));
-    }else{
-      for(let j in data[d]){
-        console.log(data[d][j].admission,data[d][j].vacant_seat);
-      }
-    }
-  }
+  // for(let d in data){
+  //   if(d === "personal_info"){
+  //     console.log(data[d].name,data[d].age);
+  //   }else if(d === "courses"){
+  //     data[d].map((d1) => console.log(d1));
+  //   }else{
+  //     for(let j in data[d]){
+  //       console.log(data[d][j].admission,data[d][j].vacant_seat);
+  //     }
+  //   }
+  // }
+
+  // let Data = [
+  //   {
+  //     id: 101,
+  //     name: 'Abacavir',
+  //     quantity: 25,
+  //     price: 150,
+  //     expiry: 2022,
+  //     status: true
+  //   },
+  //   {
+  //     id: 102,
+  //     name: 'Eltrombopag',
+  //     quantity: 90,
+  //     price: 550,
+  //     expiry: 2021,
+  //     status: true
+  //   },
+  //   {
+  //     id: 103,
+  //     name: 'Meloxicam',
+  //     quantity: 85,
+  //     price: 450,
+  //     expiry: 2025,
+  //     status: false
+  //   },
+  //   {
+  //     id: 104,
+  //     name: 'Allopurinol',
+  //     quantity: 50,
+  //     price: 600,
+  //     expiry: 2023,
+  //     status: true
+  //   },
+  //   {
+  //     id: 105,
+  //     name: 'Phenytoin',
+  //     quantity: 63,
+  //     price: 250,
+  //     expiry: 2021,
+  //     status: false
+  //   }
+  // ];
+
+  // let [id,name,quantity,price,expiry,status] = Data;
+
+  let Employee = [
+    {
+      name: "amit",
+      age: 35,
+      salary: 40000,
+      bonus: 1000,
+      status: true
+    },
+    {
+      name: "ajay",
+      age: 25,
+      salary: 38000,
+      bonus: 2000,
+      status: false
+    },
+    {
+      name: "mayur",
+      age: 23,
+      salary: 50000,
+      bonus: 500,
+      status: true
+    },
+    {
+      name: "jay",
+      age: 29,
+      salary: 35000,
+      bonus: 600,
+      status: true
+    },
+    {
+      name: "raj",
+      age: 33,
+      salary: 22000,
+      bonus: 2000,
+      status: true
+    },
+  ]
 
   return (
     <div>
-      <Demo />
+      {/* <table border="1">
+        <tr>
+          <td>Id</td>
+          <td>Name</td>
+          <td>Quantity</td>
+          <td>Price</td>
+          <td>Expiry</td>
+          <td>Status</td>
+        </tr>
+          {
+            Data.map((d)=> {
+              return(
+                <tr>
+                <th>{d.id}</th>
+                <th>{d.name}</th>
+                <th>{d.quantity}</th>
+                <th>{d.price}</th>
+                <th>{d.expiry}</th>
+                <th>{d.status.toString()}</th>
+              </tr>
+              )
+            })
+          }
+      </table> */}
+      <table border="1">
+        <tr>
+          <td>Name</td>
+          <td>Age</td>
+          <td>Salary</td>
+          <td>Bouns</td>
+          <td>Status</td>
+        </tr>
+        {
+          Employee.map((e) => {
+            return (
+              <tr>
+                <th>{e.name}</th>
+                <th>{e.age}</th>
+                <th>{e.salary}</th>
+                <th>{e.bonus}</th>
+                <th>{e.status.toString()}</th>
+              </tr>
+            )
+          })
+        }
+      </table>
     </div>
   );
 }
