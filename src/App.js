@@ -208,14 +208,14 @@ function App() {
   let fdata = data.filter((d) => d.status === true && d.expiry >= 2022)
   console.log(fdata);
 
-  let ans=fdata.reduce((acc,d,i) => acc + d.price,0)
+  let ans = fdata.reduce((acc, d, i) => acc + d.price, 0)
   console.log(ans);
 
   let efdata = Employee.filter((e) => e.status === true);
   console.log(efdata);
 
-  let emloyeeans = efdata.reduce((acc,e,i) => acc + e.salary + e.bonus,0)
-  console.log(emloyeeans);
+    let emloyeeans = efdata.reduce((acc, e, i) => acc + e.salary + e.bonus , 0)
+    console.log(emloyeeans);
 
   return (
     <div>
@@ -229,11 +229,11 @@ function App() {
           <th>Status</th>
           <th>Totle Price</th>
         </tr>
-          {
-            fdata.map((d,i)=> {
-              let {id,name,quantity,price,expiry,status} = d
-              return(
-                <tr key={i}>
+        {
+          fdata.map((d, i) => {
+            let { id, name, quantity, price, expiry, status } = d
+            return (
+              <tr key={i}>
                 <td>{id}</td>
                 <td>{name}</td>
                 <td>{quantity}</td>
@@ -242,9 +242,9 @@ function App() {
                 <td>{status.toString()}</td>
                 {i == 0 ? <td rowSpan="2">{ans}</td> : null}
               </tr>
-              )
-            })
-          }
+            )
+          })
+        }
       </table>
       <table border="1">
         <tr>
@@ -256,16 +256,17 @@ function App() {
           <th>Totle Salary</th>
         </tr>
         {
-          efdata.map((e,i) => {
-            let {name,age,salary,bonus,status} = e;
+          efdata.map((e, i) => {
+            let { name, age, salary, bonus, status } = e;
             return (
               <tr key={i}>
                 <td >{name}</td>
                 <td>{age}</td>
                 <td>{salary}</td>
                 <td>{bonus}</td>
-                <td>{status.toString()}</td>
-                <td>{emloyeeans}</td>
+                <td>{status.toString()},</td>
+                <td>{salary + bonus}</td>
+                {i == 0 ? <td rowSpan="4">{emloyeeans}</td> : null}
               </tr>
             )
           })
