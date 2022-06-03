@@ -8,11 +8,19 @@ class City extends Component {
             CityName : "Surat"
         }
     }
+
+    changeCityName(){
+        // console.log("Hello");
+        this.setState({
+            CityName : "Rajkot"
+        })
+    }
     
     render() {
         return (
             <div>
                 <p>{this.state.CityName}</p>
+                <button onClick={() => this.changeCityName()}>Change City Name</button>
             </div>
         );
     }
