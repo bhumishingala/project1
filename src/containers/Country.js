@@ -7,14 +7,12 @@ class Country extends Component {
         
         this.state = {
             countryName : 'India',
-            placeName : 'Taj-Mahal'
         }
     }
 
     changeCountry = () => {
         this.setState({
             countryName : 'US',
-            placeName: 'Millennium Park'
         })
     }
 
@@ -23,7 +21,8 @@ class Country extends Component {
             <div>
                 <p>{this.state.countryName} {this.state.placeName}</p>
                 <button onClick={() => this.changeCountry()}>change Country</button>
-                <City id={101} Country_Name={this.state.countryName} Place_Name={this.state.placeName}/>
+                <City id={101} Country_Name={this.state.countryName}/>
+                <p>{this.state.countryName === "India" ? "Famous Place Taj Mahal" : "Millennium Park"}</p>
             </div>
         );
     }
