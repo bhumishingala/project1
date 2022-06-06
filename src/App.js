@@ -9,9 +9,9 @@ function App() {
   return (
     <div>
       {/* <Country /> */}
-      {/* <CountryFun /> */}
+      <CountryFun />
       {/* <City />  */}
-      <CityFun />
+      {/* <CityFun /> */}
     </div>
   );  
 }

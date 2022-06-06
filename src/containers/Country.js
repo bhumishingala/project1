@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import City from './City';
 
 class Country extends Component {
     constructor(props) {
@@ -6,20 +7,23 @@ class Country extends Component {
         
         this.state = {
             countryName : 'India',
+            placeName : 'Taj-Mahal'
         }
     }
 
     changeCountry = () => {
         this.setState({
-            countryName : 'US'
+            countryName : 'US',
+            placeName: 'Millennium Park'
         })
     }
 
     render() {
         return (
             <div>
-                <p>{this.state.countryName}</p>
+                <p>{this.state.countryName} {this.state.placeName}</p>
                 <button onClick={() => this.changeCountry()}>change Country</button>
+                <City id={101} Country_Name={this.state.countryName} Place_Name={this.state.placeName}/>
             </div>
         );
     }
