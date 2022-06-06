@@ -4,14 +4,16 @@ import Country from './containers/Country';
 import CountryFun from './containers/CountryFun';
 import City from './containers/City';
 import CityFun from './containers/CityFun';
+import Time from './time/Time';
 
 function App() {
   return (
     <div>
       {/* <Country /> */}
-      <CountryFun />
+      {/* <CountryFun /> */}
       {/* <City />  */}
       {/* <CityFun /> */}
+      <Time />
     </div>
   );  
 }
