@@ -8,7 +8,7 @@ import Time from './containers/time/Time';
 import TimeFun from './containers/time/TimeFun';
 import Counter from './containers/time/Counter';
 import CounterFun from './containers/time/CounterFun';
-import { useEffect, useState } from 'react';
+import { Component, useEffect, useState } from 'react';
 import Loading from './containers/HOC/Loading';
 import Home from './containers/HOC/Home';
 

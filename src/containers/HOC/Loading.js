@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Loading(Compenent) {
-    return function WithzzloadingComponent({isLoading}){
+    return function WithzloadingComponent({isLoading,data}){
         if(isLoading){
             return (
                 <p>Loading....</p>

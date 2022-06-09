@@ -1,20 +1,17 @@
 import React from 'react';
 
-function Home(props) {
+function Home({data}) {
     return (
         <div>
             {
-                
-                    data.map((d,i) => {
-                        return(
+                data.map((d,i) => {
+                    return(
                         <>
-                        <h3>{d.id}</h3>
-                        <h4>{d.name}</h4>
+                            <h3>{d.id}</h3>
+                            <h4>{d.name}</h4>
                         </>
-                        )
-                    })
-                // )
-                
+                    )
+                })               
             }
         </div>
     );
